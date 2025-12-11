@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Docker Cheatsheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #fdfdfd;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    h2 {
+      color: #34495e;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+      word-wrap: break-word;
+    }
+    th {
+      background-color: #ecf0f1;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Docker Cheatsheet</h1>
+
+  <h2>Essential Docker Commands</h2>
+  <table>
+    <tr><th>Description</th><th>Command</th></tr>
+    <tr><td>Check Docker version</td><td><code>docker --version</code></td></tr>
+    <tr><td>List running containers</td><td><code>docker ps</code></td></tr>
+    <tr><td>List all containers</td><td><code>docker ps -a</code></td></tr>
+    <tr><td>List images</td><td><code>docker images</code></td></tr>
+    <tr><td>Run a container</td><td><code>docker run image_name</code></td></tr>
+    <tr><td>Run in background</td><td><code>docker run -d image_name</code></td></tr>
+    <tr><td>Run with port mapping</td><td><code>docker run -p 8080:80 image_name</code></td></tr>
+    <tr><td>Stop container</td><td><code>docker stop container_id</code></td></tr>
+    <tr><td>Remove container</td><td><code>docker rm container_id</code></td></tr>
+    <tr><td>Remove image</td><td><code>docker rmi image_id</code></td></tr>
+  </table>
+
+  <h2>Docker Compose Commands</h2>
+  <table>
+    <tr><th>Description</th><th>Command</th></tr>
+    <tr><td>Check Docker Compose version</td><td><code>docker compose version</code></td></tr>
+    <tr><td>Start services</td><td><code>docker compose up</code></td></tr>
+    <tr><td>Start services in background</td><td><code>docker compose up -d</code></td></tr>
+    <tr><td>Stop services</td><td><code>docker compose down</code></td></tr>
+    <tr><td>View logs</td><td><code>docker compose logs</code></td></tr>
+    <tr><td>Run command in service</td><td><code>docker compose exec service_name bash</code></td></tr>
+    <tr><td>Build or rebuild services</td><td><code>docker compose build</code></td></tr>
+    <tr><td>List services</td><td><code>docker compose ps</code></td></tr>
+    <tr><td>Remove unused data</td><td><code>docker compose down --volumes --remove-orphans</code></td></tr>
+  </table>
+
+  <h2>Maintenance</h2>
+  <table>
+    <tr><th>Description</th><th>Command</th></tr>
+    <tr><td>Remove all stopped containers</td><td><code>docker container prune</code></td></tr>
+    <tr><td>Remove unused images</td><td><code>docker image prune</code></td></tr>
+    <tr><td>Remove unused volumes</td><td><code>docker volume prune</code></td></tr>
+    <tr><td>Remove unused networks</td><td><code>docker network prune</code></td></tr>
+    <tr><td>Remove everything unused</td><td><code>docker system prune</code></td></tr>
+  </table>
+
+  <h2>Glossary</h2>
+  <table>
+    <tr><th>Term</th><th>Explanation</th></tr>
+    <tr><td>Image</td><td>A lightweight, stand-alone package that includes everything needed to run software.</td></tr>
+    <tr><td>Container</td><td>A running instance of an image, isolated from the host system.</td></tr>
+    <tr><td>Dockerfile</td><td>A text file with instructions to build a Docker image.</td></tr>
+    <tr><td>Volume</td><td>Persistent storage that containers can use to save data.</td></tr>
+    <tr><td>Network</td><td>A way for containers to communicate with each other.</td></tr>
+    <tr><td>Registry</td><td>A storage and distribution system for Docker images (e.g., Docker Hub).</td></tr>
+    <tr><td>Tag</td><td>A label applied to an image to identify its version.</td></tr>
+    <tr><td>Compose</td><td>A tool for defining and running multi-container Docker applications using YAML files.</td></tr>
+    <tr><td>Service</td><td>A container definition in a Compose file, e.g., web, db.</td></tr>
+    <tr><td>Prune</td><td>Clean up unused Docker objects (containers, images, volumes, networks).</td></tr>
+    <tr><td>Orphan</td><td>A container left over from a previous Compose run that is no longer defined.</td></tr>
+  </table>
+
+</body>
+</html>
