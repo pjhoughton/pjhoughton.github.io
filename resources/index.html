@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    The <head> contains meta-information about the page. 
+    Meta tags, title, and links to CSS go here.
+  -->
+  <meta charset="UTF-8"> <!-- Sets the character encoding for the page -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Viewport meta tag makes the site responsive on mobile devices -->
+  <title>Resources</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="../css/style.css"> 
+  <!-- ../ means "go up one folder" because this file is inside /resources -->
+</head>
+
+<body>
+  <!-- Navigation menu -->
+  <nav>
+    <ul>
+      <!-- Each link points to the corresponding page.
+           ../ is used to go up one folder from /resources to the root. -->
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../homelab.html">Homelab</a></li>
+      <li><a href="../ansible.html">Ansible</a></li>
+      <li><a href="../docker.html">Docker</a></li>
+      <li><a href="../homeassistant.html">Home Assistant</a></li>
+      <li><a href="../powershell.html">PowerShell</a></li>
+      <li><a href="../about.html">About Me</a></li>
+      <!-- The "Resources" link points to itself, so no ../ is needed -->
+      <li><a href="index.html" class="active">Resources</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page header -->
+  <header>
+    <h1>📚 Resources</h1>
+    <p>
+      This page is a hub for cheatsheets, guides, and external links
+      for tools and platforms used in my homelab and automation projects.
+    </p>
+  </header>
+
+  <!-- CheatSheets Section -->
+  <section>
+    <h2>📑 CheatSheets</h2>
+    <p><strong>Purpose:</strong> Quick reference guides for commonly used tools and platforms.</p>
+    <ul>
+      <!-- Links are relative to the current folder (/resources) -->
+      <li>📘 <a href="ansible-cheatsheet.html">Ansible Cheatsheet</a></li>
+      <li>💻 <a href="bash-cheatsheet.html">Bash Cheatsheet</a></li>
+      <li>🐳 <a href="docker-cheatsheet.html">Docker Cheatsheet</a></li>
+      <li>🔧 <a href="git-cheatsheet.html">Git Cheatsheet</a></li>
+      <li>🌐 <a href="html-cheatsheet.html">HTML Cheatsheet</a></li>
+      <li>📝 <a href="markdown-cheatsheet.html">Markdown Cheatsheet</a></li>
+      <li>📦 <a href="powershell-cheatsheet.html">PowerShell Cheatsheet</a></li>
+      <li>🐧 <a href="ubuntu-cheatsheet.html">Ubuntu Cheatsheet</a></li>
+    </ul>
+  </section>
+
+  <!-- End of Life Section -->
+  <section>
+    <h2>⏳ End Of Life (EOL) Dates</h2>
+    <p>
+      <a href="End_Of_Life.html">View End Of Life (EOL) Dates</a> – Lifecycle timelines for OS and software versions.
+    </p>
+  </section>
+
+  <!-- Other Resources Section -->
+  <section>
+    <h2>🔗 Other Resources</h2>
+    <p><strong>Purpose:</strong> External resources grouped by technology stack.</p>
+
+    <!-- Example for each technology stack -->
+    <h3>🖥️ Xen / XCP-ng</h3>
+    <ul>
+      <li><a href="https://xen-orchestra.com/docs/" target="_blank">Xen Orchestra Documentation</a></li>
+      <li><a href="https://xcp-ng.org/docs/" target="_blank">XCP-ng Documentation</a></li>
+      <li><a href="https://github.com/ronivay/XenOrchestraInstall

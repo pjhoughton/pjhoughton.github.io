@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Sets the character encoding for the document -->
   <meta charset="UTF-8">
+  <!-- Ensures the page scales correctly on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exploring My GitHub Projects</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Link to the external CSS file for styling -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <!-- Navigation menu at the top of the page -->
   <nav>
     <ul>
+      <!-- "active" class is used to style the currently active page -->
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="homelab.html">Homelab</a></li>
       <li><a href="ansible.html">Ansible</a></li>
       <li><a href="docker.html">Docker</a></li>
       <li><a href="homeassistant.html">Home Assistant</a></li>
-	  <li><a href="powershell.html">PowerShell</a></li>
+      <li><a href="powershell.html">PowerShell</a></li>
       <li><a href="about.html">About Me</a></li>
-      <li><a href="resources.html">Resources</a></li>
+
+      <!--
+        Learning note:
+        When testing locally, open index.html directly OR use a local server.
+        Browsers do not automatically load index.html from folders without a server.
+        GitHub Pages serves index.html automatically, so links will work online.
+      -->
+      <li><a href="resources/">Resources</a></li>
     </ul>
   </nav>
 
+  <!-- Page header: main introduction to the site -->
   <header>
     <h1>🏠 Welcome to My Website</h1>
     <p>
@@ -31,17 +46,29 @@
     </p>
   </header>
 
+  <!-- Main content section for exploring projects -->
   <section>
     <h2>📂 Explore My Projects</h2>
     <ul>
+      <!-- Each item links to a different project page -->
       <li><a href="homelab.html">Homelab</a></li>
       <li><a href="ansible.html">Ansible</a></li>
       <li><a href="docker.html">Docker</a></li>
       <li><a href="homeassistant.html">Home Assistant</a></li>
-	  <li><a href="powershell.html">PowerShell</a></li>
+      <li><a href="powershell.html">PowerShell</a></li>
     </ul>
+    <!-- Learning tip: you can add more sections here as you add more projects -->
   </section>
 
+  <!-- Horizontal line separates sections visually -->
   <hr />
+
+  <!-- Optional: add a footer for contact info or copyright -->
+  <!--
+  <footer>
+    <p>© 2025 Paul Houghton. All rights reserved.</p>
+  </footer>
+  -->
+
 </body>
 </html>
