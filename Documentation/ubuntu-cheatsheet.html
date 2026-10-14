@@ -1,0 +1,1016 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Ensures the page scales correctly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐧 Ubuntu Cheatsheet</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <!-- "active" class is used to style the currently active page -->
+      <li><a href="../index.html">Home</a></li>
+	  <li><a href="cheatsheets.html"class="active">Cheatsheets</a></li> 
+      <li><a href="homelab.html">Homelab</a></li>
+      <li><a href="ansible.html">Ansible</a></li>
+      <li><a href="docker.html">Docker</a></li>
+      <li><a href="homeassistant.html">Home Assistant</a></li>
+      <li><a href="powershell.html">PowerShell</a></li>
+	  <li><a href="reading-room.html">Reading Room</a></li>
+      <li><a href="about.html">About Me</a></li>
+    </ul>
+  </nav>
+
+<header>
+    <div class="wrapper header-content">
+        <h1>🐧 Ubuntu Cheatsheet</h1>
+        <p>Linux / Ubuntu command reference for APT, system control, networking, users, storage, and diagnostics</p>
+        <!--<a href="../README.html" class="back-link">← Back to Main</a> -->
+    </div>
+</header>
+
+<div class="wrapper">
+
+    <div class="description">
+        Quick reference guide for Ubuntu and Linux administration, including package management,
+        system monitoring, networking, services, users, storage, file operations, and troubleshooting commands.
+    </div>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>Package Management</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Update package list</td>
+                        <td><code>sudo apt update</code></td>
+                    </tr>
+                    <tr>
+                        <td>Upgrade installed packages</td>
+                        <td><code>sudo apt upgrade</code></td>
+                    </tr>
+                    <tr>
+                        <td>Upgrade packages, install dependencies, and remove conflicts</td>
+                        <td><code>sudo apt full-upgrade</code></td>
+                    </tr>
+                    <tr>
+                        <td>Upgrade Ubuntu to the next release</td>
+                        <td><code>sudo do-release-upgrade</code></td>
+                    </tr>
+                    <tr>
+                        <td>Install a package</td>
+                        <td><code>sudo apt install package</code></td>
+                    </tr>
+                    <tr>
+                        <td>Remove a package</td>
+                        <td><code>sudo apt remove package</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section">
+    <h2>SSH Management</h2>
+    <br>
+
+    <div class="table-card">
+        <table>
+            <tr>
+                <th>Description</th>
+                <th>Command</th>
+            </tr>
+            <tr>
+                <td>Connect to a remote host</td>
+                <td><code>ssh username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Connect using a specific key</td>
+                <td><code>ssh -i ~/.ssh/id_ed25519 username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Connect on a non-standard port</td>
+                <td><code>ssh -p 2222 username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Generate a new ED25519 SSH key pair</td>
+                <td><code>ssh-keygen -t ed25519 -C "user@example.com"</code></td>
+            </tr>
+            <tr>
+                <td>Generate a new RSA SSH key pair</td>
+                <td><code>ssh-keygen -t rsa -b 4096 -C "user@example.com"</code></td>
+            </tr>
+            <tr>
+                <td>Display public key</td>
+                <td><code>cat ~/.ssh/id_ed25519.pub</code></td>
+            </tr>
+            <tr>
+                <td>Copy SSH key to a remote server</td>
+                <td><code>ssh-copy-id username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Test SSH connectivity with verbose output</td>
+                <td><code>ssh -v username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Very verbose SSH troubleshooting</td>
+                <td><code>ssh -vvv username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>List loaded SSH agent keys</td>
+                <td><code>ssh-add -l</code></td>
+            </tr>
+            <tr>
+                <td>Add key to SSH agent</td>
+                <td><code>ssh-add ~/.ssh/id_ed25519</code></td>
+            </tr>
+            <tr>
+                <td>Remove all keys from SSH agent</td>
+                <td><code>ssh-add -D</code></td>
+            </tr>
+            <tr>
+                <td>View SSH client configuration</td>
+                <td><code>cat ~/.ssh/config</code></td>
+            </tr>
+            <tr>
+                <td>Test SSH configuration for a host</td>
+                <td><code>ssh -G hostname</code></td>
+            </tr>
+            <tr>
+                <td>Show remote host fingerprint</td>
+                <td><code>ssh-keyscan hostname</code></td>
+            </tr>
+            <tr>
+                <td>Display fingerprint of a public key</td>
+                <td><code>ssh-keygen -lf ~/.ssh/id_ed25519.pub</code></td>
+            </tr>
+            <tr>
+                <td>Remove a host from known_hosts</td>
+                <td><code>ssh-keygen -R hostname</code></td>
+            </tr>
+            <tr>
+                <td>Remove a host/IP from known_hosts</td>
+                <td><code>ssh-keygen -R 10.182.80.6</code></td>
+            </tr>
+            <tr>
+                <td>View known_hosts entries</td>
+                <td><code>cat ~/.ssh/known_hosts</code></td>
+            </tr>
+            <tr>
+                <td>Create a local port forward</td>
+                <td><code>ssh -L 8080:localhost:80 username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Create a remote port forward</td>
+                <td><code>ssh -R 8080:localhost:80 username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Create a SOCKS proxy</td>
+                <td><code>ssh -D 1080 username@hostname</code></td>
+            </tr>
+            <tr>
+                <td>Execute a command remotely</td>
+                <td><code>ssh username@hostname "df -h"</code></td>
+            </tr>
+            <tr>
+                <td>Copy file to remote host (SCP)</td>
+                <td><code>scp file.txt username@hostname:/tmp/</code></td>
+            </tr>
+            <tr>
+                <td>Copy file from remote host (SCP)</td>
+                <td><code>scp username@hostname:/tmp/file.txt .</code></td>
+            </tr>
+            <tr>
+                <td>Synchronise folders over SSH (rsync)</td>
+                <td><code>rsync -avz /source/ username@hostname:/destination/</code></td>
+            </tr>
+            <tr>
+                <td>Start SSH agent</td>
+                <td><code>eval "$(ssh-agent -s)"</code></td>
+            </tr>
+            <tr>
+                <td>Test GitLab SSH authentication</td>
+                <td><code>ssh -T git@gitlab.example.com</code></td>
+            </tr>
+            <tr>
+                <td>View SSH daemon configuration</td>
+                <td><code>sudo cat /etc/ssh/sshd_config</code></td>
+            </tr>
+            <tr>
+                <td>Validate SSH daemon configuration</td>
+                <td><code>sudo sshd -t</code></td>
+            </tr>
+            <tr>
+                <td>Restart SSH service</td>
+                <td><code>sudo systemctl restart ssh</code></td>
+            </tr>
+            <tr>
+                <td>Check SSH service status</td>
+                <td><code>sudo systemctl status ssh</code></td>
+            </tr>
+            <tr>
+                <td>Show active SSH sessions</td>
+                <td><code>who</code></td>
+            </tr>
+        </table>
+    </div>
+
+
+        <div class="section">
+            <h2>System Monitoring</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Show full Ubuntu release information</td>
+                        <td><code>lsb_release -a</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show mounted filesystem disk usage and free space</td>
+                        <td><code>df -h</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show block storage layout of disks, partitions, and LVM volumes</td>
+                        <td><code>lsblk</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show LVM logical volumes, sizes, and attributes</td>
+                        <td><code>sudo lvs</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show volume group size and remaining free space</td>
+                        <td><code>sudo vgs</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show physical volume information</td>
+                        <td><code>sudo pvs</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show largest directories under /var</td>
+                        <td><code>sudo du -xh /var --max-depth=1 | sort -h</code></td>
+                    </tr>
+                    <tr>
+                        <td>Rescan disk after capacity has been extended in VMware</td>
+                        <td><code>echo 1 | sudo tee /sys/class/block/sda/device/rescan</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show memory usage</td>
+                        <td><code>free -m</code></td>
+                    </tr>
+                    <tr>
+                        <td>Interactive process monitor</td>
+                        <td><code>top</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show system information</td>
+                        <td><code>uname -a</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show running processes</td>
+                        <td><code>ps aux</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Networking</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Show IP addresses and interfaces</td>
+                        <td><code>ip a</code></td>
+                    </tr>
+                    <tr>
+                        <td>Ping a host</td>
+                        <td><code>ping host</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show open listening ports</td>
+                        <td><code>netstat -tuln</code></td>
+                    </tr>
+                    <tr>
+                        <td>Perform DNS lookup</td>
+                        <td><code>nslookup domain</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Services &amp; Logs</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Start a service</td>
+                        <td><code>sudo systemctl start service</code></td>
+                    </tr>
+                    <tr>
+                        <td>Stop a service</td>
+                        <td><code>sudo systemctl stop service</code></td>
+                    </tr>
+                    <tr>
+                        <td>Restart a service</td>
+                        <td><code>sudo systemctl restart service</code></td>
+                    </tr>
+                    <tr>
+                        <td>Enable a service at boot</td>
+                        <td><code>sudo systemctl enable service</code></td>
+                    </tr>
+                    <tr>
+                        <td>View recent system logs</td>
+                        <td><code>journalctl -xe</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Firewall (UFW)</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Show firewall status</td>
+                        <td><code>sudo ufw status verbose</code></td>
+                    </tr>
+                    <tr>
+                        <td>Enable firewall</td>
+                        <td><code>sudo ufw enable</code></td>
+                    </tr>
+                    <tr>
+                        <td>Disable firewall</td>
+                        <td><code>sudo ufw disable</code></td>
+                    </tr>
+                    <tr>
+                        <td>Allow a port</td>
+                        <td><code>sudo ufw allow 22</code></td>
+                    </tr>
+                    <tr>
+                        <td>Deny a port</td>
+                        <td><code>sudo ufw deny 80</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>User Management</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Add a user</td>
+                        <td><code>sudo adduser username</code></td>
+                    </tr>
+                    <tr>
+                        <td>Delete a user</td>
+                        <td><code>sudo deluser username</code></td>
+                    </tr>
+                    <tr>
+                        <td>Delete a user and remove their home directory</td>
+                        <td><code>sudo deluser --remove-home username</code></td>
+                    </tr>
+                    <tr>
+                        <td>Set or change a user's password</td>
+                        <td><code>sudo passwd username</code></td>
+                    </tr>
+                    <tr>
+                        <td>Add a user to a group</td>
+                        <td><code>sudo usermod -aG group username</code></td>
+                    </tr>
+                    <tr>
+                        <td>List local users</td>
+                        <td><code>cut -d: -f1 /etc/passwd</code></td>
+                    </tr>
+                    <tr>
+                        <td>List Human users only </td>
+                        <td><code>awk -F: '$3 >= 1000 {print $1}' /etc/passwd</code></td>
+                    </tr>
+                    <tr>
+                        <td>Validate sudoers syntax</td>
+                        <td><code>sudo visudo -c</code></td>
+                    </tr>
+                    <tr>
+                        <td>Safely edit and validate a specific sudoers file</td>
+                        <td><code>sudo visudo -f /etc/sudoers.d/my_custom_file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Remove User from Known hosts </td>
+                        <td><code>ssh-keygen -R 10.182.80.6    or ssh-keygen -R testpsdsc01</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Permissions &amp; Ownership</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Change permissions</td>
+                        <td><code>chmod 755 file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Change owner and group</td>
+                        <td><code>chown user:group file</code></td>
+                    </tr>
+                    <tr>
+                        <td>View permissions</td>
+                        <td><code>ls -l</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>    
+        
+        <div class="section">
+            <h2>Common chmod Permissions</h2>
+
+            <p>
+                Permission values:
+                <code>4 = Read (r)</code>,
+                <code>2 = Write (w)</code>,
+                <code>1 = Execute (x)</code>.
+                Example: <code>755 = rwx r-x r-x</code>
+            </p>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Description</th>
+                        <th>Typical Use</th>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 777 file</code></td>
+                        <td>Everyone can read, write and execute</td>
+                        <td>Avoid in production. Temporary troubleshooting only.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 755 script.sh</code></td>
+                        <td>Owner full access, others read and execute</td>
+                        <td>Scripts and executables.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 775 directory</code></td>
+                        <td>Owner and group full access</td>
+                        <td>Shared application directories.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 755 directory</code></td>
+                        <td>Standard directory permissions</td>
+                        <td>Most Linux directories.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 644 file</code></td>
+                        <td>Owner read/write, others read</td>
+                        <td>Configuration files.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 640 file</code></td>
+                        <td>Owner read/write, group read</td>
+                        <td>Application configs containing sensitive settings.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 600 file</code></td>
+                        <td>Owner read/write only</td>
+                        <td>Passwords, secrets, certificates and private keys.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 400 file</code></td>
+                        <td>Owner read only</td>
+                        <td>Highly protected secret files.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 444 file</code></td>
+                        <td>Read only for everyone</td>
+                        <td>Files that should never be edited.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 700 directory</code></td>
+                        <td>Owner full access only</td>
+                        <td>Private directories.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 700 ~/.ssh</code></td>
+                        <td>Owner full access only</td>
+                        <td>SSH directory.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 600 ~/.ssh/id_rsa</code></td>
+                        <td>Owner read/write only</td>
+                        <td>SSH private key.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 644 ~/.ssh/id_rsa.pub</code></td>
+                        <td>Publicly readable</td>
+                        <td>SSH public key.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 600 ~/.ssh/authorized_keys</code></td>
+                        <td>Owner read/write only</td>
+                        <td>SSH authorised keys file.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 600 vault.yml</code></td>
+                        <td>Owner read/write only</td>
+                        <td>Ansible Vault encrypted files.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 600 .vault_pass</code></td>
+                        <td>Owner read/write only</td>
+                        <td>Ansible Vault password files.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 440 /etc/sudoers</code></td>
+                        <td>Read only for root and group</td>
+                        <td>Sudo configuration.</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>chmod 440 /etc/sudoers.d/*</code></td>
+                        <td>Read only for root and group</td>
+                        <td>Additional sudo rules.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>File Management</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>List files with permissions</td>
+                        <td><code>ls -la</code></td>
+                    </tr>
+                    <tr>
+                        <td>List files with sizes</td>
+                        <td><code>ls -lh</code></td>
+                    </tr>
+                    <tr>
+                        <td>Create an empty file</td>
+                        <td><code>touch filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Create multiple files</td>
+                        <td><code>touch file1 file2 file3</code></td>
+                    </tr>
+                    <tr>
+                        <td>Update file timestamp</td>
+                        <td><code>touch filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Copy a file</td>
+                        <td><code>cp source dest</code></td>
+                    </tr>
+                    <tr>
+                        <td>Copy a directory recursively</td>
+                        <td><code>cp -r source dest</code></td>
+                    </tr>
+                    <tr>
+                        <td>Move or rename a file</td>
+                        <td><code>mv source dest</code></td>
+                    </tr>
+                    <tr>
+                        <td>Delete a file</td>
+                        <td><code>rm file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Delete a directory and contents</td>
+                        <td><code>rm -rf directory</code></td>
+                    </tr>
+                    <tr>
+                        <td>Create directory</td>
+                        <td><code>mkdir dirname</code></td>
+                    </tr>
+                    <tr>
+                        <td>Create nested directories</td>
+                        <td><code>mkdir -p /path/to/dir</code></td>
+                    </tr>
+                    <tr>
+                        <td>Remove empty directory</td>
+                        <td><code>rmdir dirname</code></td>
+                    </tr>
+                    <tr>
+                        <td>View file contents</td>
+                        <td><code>cat filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>View large file page by page</td>
+                        <td><code>less filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show first 20 lines</td>
+                        <td><code>head -20 filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show last 20 lines</td>
+                        <td><code>tail -20 filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Follow a log file in real time</td>
+                        <td><code>tail -f /var/log/syslog</code></td>
+                    </tr>
+                    <tr>
+                        <td>Edit a file</td>
+                        <td><code>nano filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Search for text in a file</td>
+                        <td><code>grep "text" file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Search recursively in a directory</td>
+                        <td><code>grep -r "text" /path</code></td>
+                    </tr>
+                    <tr>
+                        <td>Find files by name</td>
+                        <td><code>find /path -name filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Find all log files</td>
+                        <td><code>find / -name "*.log"</code></td>
+                    </tr>
+                    <tr>
+                        <td>Locate a file quickly</td>
+                        <td><code>locate filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show file type</td>
+                        <td><code>file filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Show file checksum (SHA256)</td>
+                        <td><code>sha256sum filename</code></td>
+                    </tr>
+                    <tr>
+                        <td>Create a symbolic link</td>
+                        <td><code>ln -s source target</code></td>
+                    </tr>
+                    <tr>
+                        <td>Pipe command output to grep</td>
+                        <td>
+                            <code>ps -ef | grep apt</code><br>
+                            <code>who | grep admin</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Displays the contents of a directory in a visual, tree-like hierarchical structure: -D shows date, -g  shows owner group </td>
+                        <td><code>tree</code></td>
+                    </tr>    
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>System Tools</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+
+                    <tr>
+                        <td>Show system uptime</td>
+                        <td><code>uptime</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show hostname and OS information</td>
+                        <td><code>hostnamectl</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show current hostname</td>
+                        <td><code>hostname</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show current date and time</td>
+                        <td><code>date</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show timezone and NTP status</td>
+                        <td><code>timedatectl</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show current logged-on user</td>
+                        <td><code>whoami</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show logged-on users</td>
+                        <td><code>who</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show login history</td>
+                        <td><code>last</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show command history</td>
+                        <td><code>history</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Locate executable path</td>
+                        <td><code>which ansible</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show environment PATH</td>
+                        <td><code>echo $PATH</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show kernel information</td>
+                        <td><code>uname -r</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show full system information</td>
+                        <td><code>uname -a</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show installed Ubuntu version</td>
+                        <td><code>lsb_release -a</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show CPU information</td>
+                        <td><code>lscpu</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show memory information</td>
+                        <td><code>free -h</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show block devices and disks</td>
+                        <td><code>lsblk</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Show mounted filesystems</td>
+                        <td><code>df -h</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Find files by name</td>
+                        <td><code>find /path -name filename</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Reboot the server</td>
+                        <td><code>sudo reboot</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Shut down the server immediately</td>
+                        <td><code>sudo shutdown now</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>File Operations</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>List files</td>
+                        <td><code>ls</code></td>
+                    </tr>
+                    <tr>
+                        <td>Change directory</td>
+                        <td><code>cd</code></td>
+                    </tr>
+                    <tr>
+                        <td>Copy files</td>
+                        <td><code>cp source dest</code></td>
+                    </tr>
+                    <tr>
+                        <td>Move or rename files</td>
+                        <td><code>mv source dest</code></td>
+                    </tr>
+                    <tr>
+                        <td>Remove files</td>
+                        <td><code>rm file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Create directory</td>
+                        <td><code>mkdir dirname</code></td>
+                    </tr>
+                    <tr>
+                        <td>Remove empty directory</td>
+                        <td><code>rmdir dirname</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Process Management</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>List processes</td>
+                        <td><code>ps aux</code></td>
+                    </tr>
+                    <tr>
+                        <td>Kill process by PID</td>
+                        <td><code>kill PID</code></td>
+                    </tr>
+                    <tr>
+                        <td>Run command in background</td>
+                        <td><code>command &amp;</code></td>
+                    </tr>
+                    <tr>
+                        <td>Bring background job to foreground</td>
+                        <td><code>fg</code></td>
+                    </tr>
+                    <tr>
+                        <td>Suspend current foreground process</td>
+                        <td><code>Ctrl+Z</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Environment Variables</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Set variable for current shell session</td>
+                        <td><code>export VAR=value</code></td>
+                    </tr>
+                    <tr>
+                        <td>View variable value</td>
+                        <td><code>echo $VAR</code></td>
+                    </tr>
+                    <tr>
+                        <td>List all environment variables</td>
+                        <td><code>printenv</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Text Processing</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Search text in files</td>
+                        <td><code>grep 'pattern' file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Count lines, words, and characters</td>
+                        <td><code>wc file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Sort lines</td>
+                        <td><code>sort file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Replace text</td>
+                        <td><code>sed 's/old/new/g' file</code></td>
+                    </tr>
+                    <tr>
+                        <td>Extract columns</td>
+                        <td><code>cut -d':' -f1 file</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <h2>Scripting Basics</h2>
+
+            <div class="table-card">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Command</th>
+                    </tr>
+                    <tr>
+                        <td>Define variable</td>
+                        <td><code>name="value"</code></td>
+                    </tr>
+                    <tr>
+                        <td>Print variable</td>
+                        <td><code>echo $name</code></td>
+                    </tr>
+                    <tr>
+                        <td>Basic if condition</td>
+                        <td><code>if [ "$x" -eq 1 ]; then ... fi</code></td>
+                    </tr>
+                    <tr>
+                        <td>Basic for loop</td>
+                        <td><code>for i in {1..5}; do echo $i; done</code></td>
+                    </tr>
+                    <tr>
+                        <td>Basic function</td>
+                        <td><code>myfunc() { echo "Hello"; }</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <a href="../index.html" class="home-link"> ← Go to Main Menu</a><br>
+    © 2026 | Maintained by P. Houghton
+</div>
+
+</body>
+</html>

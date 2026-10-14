@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Ensures the page scales correctly on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💻 Bash Cheatsheet</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <!-- "active" class is used to style the currently active page -->
+      <li><a href="../index.html">Home</a></li>
+	  <li><a href="cheatsheets.html"class="active">Cheatsheets</a></li> 
+      <li><a href="homelab.html">Homelab</a></li>
+      <li><a href="ansible.html">Ansible</a></li>
+      <li><a href="docker.html">Docker</a></li>
+      <li><a href="homeassistant.html">Home Assistant</a></li>
+      <li><a href="powershell.html">PowerShell</a></li>
+	  <li><a href="reading-room.html">Reading Room</a></li>
+      <li><a href="about.html">About Me</a></li>
+    </ul>
+  </nav>
+
+<header>
+    <div class="wrapper header-content">
+        <h1>💻 Bash Cheatsheet</h1>
+        <!--<a href="../README.html" class="back-link">← Back to Main</a> -->
+    </div>
+</header>
+
+<div class="wrapper">
+
+<h2>File Operations</h2>
+<div class="table-container">
+<table>
+<tr><th>Description</th><th>Command</th></tr>
+<tr><td>List files</td><td><code>ls</code></td></tr>
+<tr><td>Change directory</td><td><code>cd</code></td></tr>
+<tr><td>Copy files</td><td><code>cp source dest</code></td></tr>
+<tr><td>Move/Rename files</td><td><code>mv source dest</code></td></tr>
+<tr><td>Remove files</td><td><code>rm file</code></td></tr>
+<tr><td>Create directory</td><td><code>mkdir dirname</code></td></tr>
+<tr><td>Remove directory</td><td><code>rmdir dirname</code></td></tr>
+</table>
+</div>
+
+<h2>Process Management</h2>
+<div class="table-container">
+<table>
+<tr><th>Description</th><th>Command</th></tr>
+<tr><td>List processes</td><td><code>ps aux</code></td></tr>
+<tr><td>Kill process</td><td><code>kill PID</code></td></tr>
+<tr><td>Run in background</td><td><code>command &</code></td></tr>
+<tr><td>Bring to foreground</td><td><code>fg</code></td></tr>
+<tr><td>Suspend process</td><td><code>Ctrl+Z</code></td></tr>
+</table>
+</div>
+
+<h2>Environment Variables</h2>
+<div class="table-container">
+<table>
+<tr><th>Description</th><th>Command</th></tr>
+<tr><td>Set variable</td><td><code>export VAR=value</code></td></tr>
+<tr><td>View variable</td><td><code>echo $VAR</code></td></tr>
+<tr><td>List all variables</td><td><code>printenv</code></td></tr>
+</table>
+</div>
+
+<h2>Text Processing</h2>
+<div class="table-container">
+<table>
+<tr><th>Description</th><th>Command</th></tr>
+<tr><td>Search text in files</td><td><code>grep 'pattern' file</code></td></tr>
+<tr><td>Count lines/words/chars</td><td><code>wc file</code></td></tr>
+<tr><td>Sort lines</td><td><code>sort file</code></td></tr>
+<tr><td>Replace text</td><td><code>sed 's/old/new/g' file</code></td></tr>
+<tr><td>Extract columns</td><td><code>cut -d':' -f1 file</code></td></tr>
+</table>
+</div>
+
+<h2>Permissions & Ownership</h2>
+<div class="table-container">
+<table>
+<tr><th>Description</th><th>Command</th></tr>
+<tr><td>Change permissions</td><td><code>chmod 755 file</code></td></tr>
+<tr><td>Change owner</td><td><code>chown user:group file</code></td></tr>
+<tr><td>View permissions</td><td><code>ls -l</code></td></tr>
+</table>
+</div>
+
+<h2>Scripting Basics</h2>
+<div class="table-container">
+<table>
+<tr><th>Description</th><th>Command</th></tr>
+<tr><td>Define variable</td><td><code>name="value"</code></td></tr>
+<tr><td>Print variable</td><td><code>echo $name</code></td></tr>
+<tr><td>If condition</td><td><code>if [ "$x" -eq 1 ]; then ... fi</code></td></tr>
+<tr><td>For loop</td><td><code>for i in {1..5}; do echo $i; done</code></td></tr>
+<tr><td>Function</td><td><code>myfunc() { echo "Hello"; }</code></td></tr>
+</table>
+</div>
+
+<h2>System Info & Disk</h2>
+<div class="table-container">
+<table>
+<tr><th>Description</th><th>Command</th></tr>
+<tr><td>Disk space</td><td><code>df -h</code></td></tr>
+<tr><td>Memory</td><td><code>free -m</code></td></tr>
+<tr><td>System info</td><td><code>uname -a</code></td></tr>
+<tr><td>CPU info</td><td><code>lscpu</code></td></tr>
+</table>
+</div>
+
+</div>
+
+<div class="footer">
+    <a href="../index.html" class="home-link"> ← Go to Main Menu</a><br>
+    © 2026 | Maintained by P. Houghton
+</div>
+
+</body>
+</html>
