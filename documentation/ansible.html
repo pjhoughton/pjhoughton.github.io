@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ansible</title>
+  <title>🤖 Ansible</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -23,68 +23,180 @@
   </nav>
 
   <header>
-    <h1>📘 Ansible</h1>
-    <p>
-      This page highlights how I use Ansible to automate and manage my homelab environment. 
-      It includes links to my repository and a quick reference cheatsheet for everyday use.
-    </p>
-  </header>
+    <div class="wrapper header-content">
+        <h1>🤖 Ansible</h1>
+        <p>All things Ansible.</p>
+    </div>
+</header>
 
-  <main>
-    <section>
-      <h2>📂 Repository</h2>
-      <p>
-        My Ansible playbooks and configurations are available on 
-        <a href="https://github.com/pjhoughton/ansible" target="_blank">GitHub</a>. 
-        These files streamline automation tasks and maintain consistency across my systems.
-      </p>
-    </section>
+<div class="wrapper">
 
-    <section>
-      <h2>📑 Cheatsheet</h2>
-      <p>
-        For quick reference, check out the 
-        <a href="ansible-cheatsheet.html">Ansible Cheatsheet</a>. 
-        It covers essential commands and YAML snippets I use regularly.
-      </p>
-    </section>
+    <div class="description">
+        A link to quick reference guides, repositories, documentation and resources for Ansible automation.
+        <strong>Internal Use Only:</strong> Access is intended for authorised IT personnel.
+    </div>
 
-    <section>
-      <h2>🛠️ Use Cases</h2>
-      <ul>
-        <li>Automating server configuration in my homelab</li>
-        <li>Managing Docker deployments</li>
-        <li>Integrating with Home Assistant for smart home automation</li>
-        <li>Maintaining consistent workflows across multiple environments</li>
-      </ul>
-    </section>
+    <div class="container">
 
-    <section>
-      <h2>❓ What is Ansible?</h2>
-      <p>
-        Ansible is an open-source IT automation engine that automates provisioning, configuration 
-        management, application deployment, orchestration, and many other IT processes. It is free 
-        to use and benefits from thousands of contributors.
-      </p>
-      <p>
-        Its main strengths are simplicity and ease of use. It also emphasizes security and reliability, 
-        featuring minimal moving parts. Ansible uses OpenSSH for transport and a human-readable language 
-        designed for quick adoption.
-      </p>
+        <!-- Core Docs -->
+        <div class="section">
+            <h2>Ansible Links</h2>
+            <div class="card-grid">
 
-      <h3>Key Concepts</h3>
-      <ul>
-        <li><strong>Control Node:</strong> The machine from which you run the Ansible CLI tools.</li>
-        <li><strong>Managed Nodes:</strong> Target devices (servers, appliances, or computers) managed by Ansible.</li>
-        <li><strong>Inventory:</strong> A list of managed nodes, grouped and assigned variables.</li>
-        <li><strong>Playbooks:</strong> YAML files containing plays that define automation tasks.</li>
-        <li><strong>Plays:</strong> Map hosts to tasks, variables, and roles in an ordered list.</li>
-        <li><strong>Roles:</strong> Reusable collections of tasks, handlers, variables, and templates.</li>
-        <li><strong>Tasks:</strong> Individual actions applied to managed hosts.</li>
-      </ul>
-    </section>
-  </main>
+                <div class="card">
+					<a href="https://github.com/pjhoughton/ansible" target="_blank">GitHub</a>.
+                        Paul's Ansible Repository
+                    </a>
+                    <p>Personal Ansible development and automation repository.</p>
+                </div>
 
+                <div class="card">
+                    <a href="ansible-cheatsheet.html">
+                        🤖 Ansible Cheatsheet
+                    </a>
+                    <p>Automation commands and playbook basics.</p>
+                </div>
+               
+
+                <div class="card">
+                    <a href="https://docs.ansible.com/"target="_blank" rel="noopener noreferrer">
+                        Official Ansible Documentation
+                    </a>
+                    <p>Complete documentation for Ansible, collections, modules and playbooks.</p>
+                </div>
+
+                <div class="card">
+                    <a href="https://galaxy.ansible.com/"target="_blank" rel="noopener noreferrer">
+                        Ansible Galaxy
+                    </a>
+                    <p>Community roles, collections and reusable automation content.</p>
+                </div>
+
+                <div class="card">
+                     <a href="https://www.redhat.com/en/technologies/management/ansible"target="_blank" rel="noopener noreferrer">
+                        Red Hat Ansible Automation Platform
+                    </a>
+                    <p>Official product information, training and automation platform resources.</p>
+                </div>
+
+            </div>
+        </div>
+    <!-- Ansible Compatibility -->
+        <div class="section">
+            <h2>📋 Ansible 2.21 Managed Node Compatibility (Ubuntu 26.04 Control Node)</h2>
+            <div class="table-card">
+                <table class="table-card">
+                    <thead>
+                        <tr>
+                            <th>Managed Ubuntu Version</th>
+                            <th>Default Python</th>
+                            <th>Compatible?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ubuntu 26.04</td>
+                            <td>Python 3.14</td>
+                            <td>Yes ✅</td>
+                  
+                        </tr>
+                        <tr>
+                            <td>Ubuntu 24.04 LTS</td>
+                            <td>Python 3.12</td>
+                            <td>Yes ✅</td>
+              
+                        </tr>
+                        <tr>
+                            <td>Ubuntu 22.04 LTS</td>
+                            <td>Python 3.10</td>
+                            <td>Yes ✅</td>
+    
+                        </tr>
+                        <tr>
+                            <td>Ubuntu 20.04 LTS</td>
+                            <td>Python 3.8</td>
+                            <td>No ❌</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+				            <p> Minimum Python 3.9 required</p>
+            </div>
+        </div>
+    
+        <!-- Ansible Overview -->
+        <div class="section">
+            <h2>What is Ansible?</h2>
+
+            <div class="card-grid">
+
+                <div class="card">
+                    <h3>Overview</h3>
+                    <p>
+                        Ansible is an open-source automation platform used for configuration management,
+                        application deployment, server provisioning and orchestration. It enables IT teams
+                        to automate repetitive tasks and maintain consistent server configurations across
+                        Windows, Linux, network devices and cloud environments.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Key Benefits</h3>
+                    <p>
+                        Ansible is agentless, meaning no software needs to be installed on managed hosts.
+                        Automation is written in simple YAML playbooks, making it easy to read, maintain
+                        and share. It supports Infrastructure as Code (IaC) principles and helps reduce
+                        manual effort and configuration drift.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Common Use Cases</h3>
+                    <p>
+                        • Operating system configuration<br>
+                        • Server build automation<br>
+                        • Software installation and patching<br>
+                        • Active Directory administration<br>
+                        • IIS and Apache configuration<br>
+                        • SQL Server deployment and maintenance<br>
+                        • VMware administration<br>
+                        • Security hardening and compliance<br>
+                        • Scheduled operational tasks
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Infrastructure as Code</h3>
+                    <p>
+                        Playbooks, roles and inventories allow infrastructure to be defined as code and
+                        stored in Git repositories. This provides version control, change tracking,
+                        peer review and reusable automation standards.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Windows Automation</h3>
+                    <p>
+                        Ansible integrates directly with Windows using WinRM and PowerShell, enabling the
+                        automation of server builds, software deployments, AD administration, IIS
+                        configuration and routine operational tasks.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Linux Automation</h3>
+                    <p>
+                        Linux servers can be managed using SSH and native modules to automate package
+                        management, service configuration, user administration, security compliance,
+                        patching and application deployment.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 <div class="footer">
     <a href="../index.html" class="home-link"> ← Go to Main Menu</a><br>
     © 2026 | Maintained by P. Houghton

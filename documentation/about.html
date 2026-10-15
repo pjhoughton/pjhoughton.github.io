@@ -1,98 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👤 About Me</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <nav>
+
+<nav>
     <ul>
-      <!-- "active" class is used to style the currently active page -->
-      <li><a href="../index.html">Home</a></li>
-	  <li><a href="cheatsheets.html">Cheatsheets</a></li> 
-      <li><a href="homelab.html">Homelab</a></li>
-      <li><a href="ansible.html">Ansible</a></li>
-      <li><a href="docker.html">Docker</a></li>
-      <li><a href="homeassistant.html">Home Assistant</a></li>
-      <li><a href="powershell.html">PowerShell</a></li>
-	  <li><a href="reading-room.html">Reading Room</a></li>
-      <li><a href="about.html"class="active">About Me</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="cheatsheets.html">Cheatsheets</a></li>
+        <li><a href="homelab.html">Homelab</a></li>
+        <li><a href="ansible.html">Ansible</a></li>
+        <li><a href="docker.html">Docker</a></li>
+        <li><a href="homeassistant.html">Home Assistant</a></li>
+        <li><a href="powershell.html">PowerShell</a></li>
+        <li><a href="reading-room.html">Reading Room</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
     </ul>
-  </nav>
+</nav>
 
-  <header>
-    <h1>👤 About Me</h1>
-    <p>
-      Hi, I’m Paul. I’ve worked in the IT industry for over 20 years and am currently a Senior Systems Engineer 
-      in a predominantly Windows and VMware environment. While I have extensive experience in enterprise systems,
-      I started building my homelab to strengthen my skills in Linux, containers, and open‑source technologies. 
-      This journey allows me to explore Docker, hypervisors, HTML, and home automation — blending decades of 
-      professional expertise with modern, open‑source tools.
-    </p>
-  </header>
+<header>
+    <div class="wrapper header-content">
+        <h1>👤 About Me</h1>
+        <p>
+            Senior Systems Engineer | Homelab Enthusiast | Automation & Open Source Learning
+        </p>
+    </div>
+</header>
 
-  <section>
-    <h2>📖 Biography</h2>
-    <p>
-      My career has spanned infrastructure, virtualization, and systems engineering. With a strong background 
-      in Windows and VMware, I wanted to challenge myself by diving into areas I wasn’t as confident in — 
-      particularly Linux and containerization. My homelab is the perfect environment to experiment, learn, 
-      and document my progress while sharing knowledge with others.
-    </p>
-  </section>
+<div class="wrapper">
 
-  <section>
-    <h2>💡 Skills & Expertise</h2>
-    <ul>
-      <li>Systems engineering in Windows and VMware environments</li>
-      <li>Automation and configuration management with Ansible</li>
-      <li>Docker and containerized workflows</li>
-      <li>Linux administration and open‑source hypervisors</li>
-      <li>Home Assistant and smart home integrations</li>
-      <li>Git, scripting, and workflow optimization</li>
-      <li>Web technologies including HTML and documentation</li>
-    </ul>
-  </section>
+    <div class="description">
+        I've worked in the IT industry for over 20 years, specialising in enterprise
+        infrastructure, virtualization and systems engineering. My homelab provides
+        a platform for learning Linux, containers, automation and self-hosted services
+        while documenting the journey and sharing knowledge with others.
+    </div>
 
-  <section>
-    <h2>🛠️ Current Projects</h2>
-    <p>
-      I’m actively refining my homelab setup to explore automation, container orchestration, and smart home solutions. 
-      Current projects include building reusable Ansible playbooks, experimenting with Docker Compose stacks, and designing 
-      modular Home Assistant automations. Each project is documented to help others learn and adopt similar approaches.
-    </p>
-  </section>
+    <div class="container">
 
-  <section>
-    <h2>🎯 Learning Goals</h2>
-    <p>
-      My homelab is not just about running services — it’s about learning. I’m focusing on:
-    </p>
-    <ul>
-      <li>Becoming more confident with Linux administration</li>
-      <li>Mastering Docker and Docker Compose</li>
-      <li>Exploring open‑source hypervisors</li>
-      <li>Improving YAML automation in Home Assistant</li>
-      <li>Sharpening my skills with HTML and documentation</li>
-    </ul>
-  </section>
+        <!-- Biography -->
+        <div class="section">
+            <h2>📖 Biography</h2>
 
-  <section>
-    <h2>🌐 Connect</h2>
-    <ul>
-      <li><a href="https://github.com/pjhoughton" target="_blank">GitHub Profile</a></li>
-      <li><a href="https://hub.docker.com/" target="_blank">Docker Hub</a></li>
-      <li><a href="https://www.home-assistant.io/" target="_blank">Home Assistant</a></li>
-    </ul>
-  </section>
+            <div class="card-grid">
 
-  <hr />
-  
-  <div class="footer">
+                <div class="card">
+                    <h3>Professional Background</h3>
+                    <p>
+                        My career has focused on infrastructure, virtualization,
+                        Windows Server and VMware environments. I currently work
+                        as a Senior Systems Engineer supporting enterprise systems
+                        and services.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Why a Homelab?</h3>
+                    <p>
+                        While I had extensive experience with enterprise technologies,
+                        I wanted to strengthen my Linux, Docker and open-source skills.
+                        My homelab provides a safe environment for experimentation
+                        and learning.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Knowledge Sharing</h3>
+                    <p>
+                        This website is used to document projects, create reference
+                        material and share lessons learned with others exploring
+                        similar technologies.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>💡 Skills & Expertise</h2>
+
+            <div class="card-grid">
+
+                <div class="card">
+                    <h3>Infrastructure</h3>
+                    <p>
+                        Windows Server, Active Directory, VMware, enterprise
+                        infrastructure and systems engineering.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Automation</h3>
+                    <p>
+                        Ansible, PowerShell scripting, configuration management
+                        and Infrastructure as Code.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Containers</h3>
+                    <p>
+                        Docker, Docker Compose, service deployment and
+                        container lifecycle management.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Linux</h3>
+                    <p>
+                        Linux administration, self-hosted applications,
+                        networking and open-source technologies.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Home Automation</h3>
+                    <p>
+                        Home Assistant integrations, dashboards and automation
+                        workflows.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Documentation</h3>
+                    <p>
+                        Git repositories, technical documentation, HTML and
+                        knowledge-sharing resources.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Current Projects -->
+        <div class="section">
+            <h2>🛠️ Current Projects</h2>
+
+            <div class="card-grid">
+
+                <div class="card">
+                    <a href="homelab.html">🏠 Homelab</a>
+                    <p>
+                        Infrastructure, virtualization, networking and
+                        self-hosted services running in my lab environment.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <a href="ansible.html">🤖 Ansible</a>
+                    <p>
+                        Automation, playbooks, roles and Infrastructure
+                        as Code projects.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <a href="docker.html">🐳 Docker</a>
+                    <p>
+                        Docker Compose stacks, containerized applications
+                        and self-hosting solutions.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <a href="homeassistant.html">🏠 Home Assistant</a>
+                    <p>
+                        Smart home automation, dashboards, integrations
+                        and custom workflows.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <a href="powershell.html">💻 PowerShell</a>
+                    <p>
+                        Administrative tooling, automation scripts and
+                        infrastructure management.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Learning Goals -->
+        <div class="section">
+            <h2>🎯 Learning Goals</h2>
+
+            <div class="card-grid">
+
+                <div class="card">
+                    <h3>Linux Administration</h3>
+                    <p>
+                        Continue building confidence with Linux systems,
+                        troubleshooting and automation.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Docker & Compose</h3>
+                    <p>
+                        Expand knowledge of containerized deployments
+                        and service management.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Open Source Platforms</h3>
+                    <p>
+                        Explore self-hosted services and open-source
+                        infrastructure solutions.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Home Assistant</h3>
+                    <p>
+                        Develop advanced automations and reusable
+                        integration patterns.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Documentation</h3>
+                    <p>
+                        Continue improving technical writing, HTML and
+                        knowledge-sharing practices.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Connect -->
+        <div class="section">
+            <h2>🌐 Connect</h2>
+
+            <div class="card-grid">
+
+                <div class="card">
+                    <a href="https://github.com/pjhoughton"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        GitHub Profile
+                    </a>
+                    <p>
+                        Personal repositories, automation projects and
+                        homelab documentation.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <a href="https://hub.docker.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Docker Hub
+                    </a>
+             images, projects and container-related
+                        resources.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <a href="https://www.home-assistant.io/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Home Assistant
+                    </a>
+                    <p>
+                        Official project website, documentation and
+                        community resources.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<hr>
+
+<div class="footer">
     <a href="../index.html" class="home-link"> ← Go to Main Menu</a><br>
     © 2026 | Maintained by P. Houghton
 </div>
+
 </body>
 </html>

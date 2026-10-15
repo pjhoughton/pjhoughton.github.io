@@ -1,177 +1,85 @@
-/* Reset some defaults */
-body, h1, h2, h3, p, ul {
-  margin: 0;
-  padding: 0;
-}
+/* =========================================================
+   Reset
+   ========================================================= */
 
-/* Base body styling */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-/* Page container (exclude nav so it can be full width) */
-body > *:not(nav) {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 960px;
-  padding: 0 1rem;
-}
-
-/* Headings */
-h1 {
-  font-size: 1.5rem;
-  margin: 1rem 0 0.75rem;
-  color: #222;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.25rem;
-}
-h2 {
-  font-size: 1.25rem;
-  margin: 1.2rem 0 0.75rem;
-  color: #34495e;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 0.25rem;
-}
-h3 {
-  font-size: 1.1rem;
-  margin: 0.8rem 0 0.5rem;
-  color: #444;
-}
-
-/* Navigation bar */
-nav {
-  background-color: #222;
-  padding: 0.4rem 1rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: nowrap; /* stay horizontal on desktop */
-}
-
-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  border-bottom: 2px solid transparent; /* prevents layout shift */
-}
-
-nav a:hover {
-  color: #ffcc00;
-}
-
-nav a.active {
-  color: #ffcc00;
-  border-bottom-color: #ffcc00;
-}
-
-/* Paragraphs */
-p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Lists */
+body,
+h1,
+h2,
+h3,
+p,
 ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
-/* Code blocks */
-pre {
-  background: #eee;
-  padding: 0.8rem;
-  border-radius: 6px;
-  overflow-x: auto;
-  font-family: monospace;
-  font-size: 0.9rem;
-  margin-bottom: 1.2rem;
-}
-code {
-  background-color: #f4f4f4;
-  padding: 2px 4px;
-  border-radius: 3px;
-  font-size: 0.9rem;
+/* =========================================================
+   Theming & CSS Variables (Dark Mode Support)
+   ========================================================= */
+
+:root {
+    /* Light Mode Variables */
+    --bg-body: #f4f6f8;
+    --text-main: #1f2d3d;
+    --text-muted: #555555;
+    --text-meta: #666666;
+    
+    --bg-surface: #ffffff;
+    --border-color: #cccccc;
+    --border-light: #d0d7de;
+    --shadow: rgba(0, 0, 0, 0.06);
+    --shadow-hover: rgba(0, 0, 0, 0.12);
+
+    --primary-color: #0078d4;
+    --primary-hover: #005fa3;
+    --primary-link: #0066cc;
+    --primary-link-hover: #004999;
+    
+    --bg-nav: #222222;
+    --text-nav: #ffffff;
+    --nav-hover: #ffcc00;
+
+    --bg-banner: #e8f1fb;
+    --bg-code: #eee;
+    --bg-inline-code: #eef3f8;
+    --text-inline-code: #334155;
+    
+    --heading-main: #222222;
+    --heading-sub: #34495e;
+    --heading-third: #444444;
 }
 
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  font-size: 0.9rem;
-}
-th, td {
-  border: 1px solid #ccc;
-  padding: 6px;
-  text-align: left;
-}
-th {
-  background-color: #ecf0f1;
-}
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode Override Variables */
+        --bg-body: #0f141c;
+        --text-main: #e2e8f0;
+        --text-muted: #94a3b8;
+        --text-meta: #64748b;
+        
+        --bg-surface: #1e293b;
+        --border-color: #334155;
+        --border-light: #334155;
+        --shadow: rgba(0, 0, 0, 0.2);
+        --shadow-hover: rgba(0, 0, 0, 0.4);
 
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0.8rem 0;
-}
+        --primary-color: #38bdf8;
+        --primary-hover: #0ea5e9;
+        --primary-link: #38bdf8;
+        --primary-link-hover: #7dd3fc;
+        
+        --bg-nav: #0f172a;
+        --text-nav: #e2e8f0;
+        --nav-hover: #38bdf8;
 
-/* Content links */
-a {
-  color: #0066cc;
-}
-a:hover {
-  color: #004999;
-  text-decoration: underline;
-}
-
-/* Blockquotes */
-blockquote {
-  border-left: 4px solid #ccc;
-  padding-left: 1rem;
-  color: #555;
-  margin: 1rem 0;
-  font-style: italic;
-  font-size: 0.95rem;
-}
-
-/* Buttons */
-button {
-  background-color: #222;
-  color: #fff;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: background-color 0.2s ease;
-}
-button:hover {
-  background-color: #444;
-}
-
-/* Footer */
-footer {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #666;
-  text-align: center;
-  padding: 0.8rem;
-  border-top: 1px solid #ddd;
+        --bg-banner: #1e293b;
+        --bg-code: #0f172a;
+        --bg-inline-code: #0f172a;
+        --text-inline-code: #38bdf8;
+        
+        --heading-main: #f8fafc;
+        --heading-sub: #cbd5e1;
+        --heading-third: #cbd5e1;
+    }
 }
 
 /* Responsive tweaks (mobile only) */
@@ -183,49 +91,434 @@ footer {
   h2 { font-size: 1.1rem; }
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-  nav {
-    background-color: #1e1e1e;
-  }
-  nav a {
-    color: #e0e0e0;
-  }
-  nav a:hover,
-  nav a.active {
-    color: #ffcc00;
-  }
-  h1, h2, h3 {
-    color: #e0e0e0;
-    border-bottom-color: #444;
-  }
-  pre, code {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-  }
-  th {
-    background-color: #2a2a2a;
-  }
-  tr:nth-child(even) {
-    background-color: #1a1a1a;
-  }
-  blockquote {
-    border-left-color: #555;
-    color: #ccc;
-  }
-  footer {
-    color: #aaa;
-    border-top-color: #444;
-  }
-  button {
-    background-color: #333;
-    color: #e0e0e0;
-  }
-  button:hover {
-    background-color: #555;
-  }
+
+/* =========================================================
+   Base Body Styling
+   ========================================================= */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: var(--bg-body);
+    color: var(--text-main);
+}
+
+/* =========================================================
+   Page Container
+   ========================================================= */
+
+body > *:not(nav):not(header):not(.footer):not(footer) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* =========================================================
+   Layout Helpers
+   ========================================================= */
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.container {
+    padding: 0 20px 20px;
+}
+
+/* =========================================================
+   Navigation Bar
+   ========================================================= */
+
+nav {
+    background-color: var(--bg-nav);
+    padding: 0.4rem 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-nav);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: var(--nav-hover);
+    text-decoration: none;
+}
+
+nav a.active {
+    color: var(--nav-hover);
+    border-bottom-color: var(--nav-hover);
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+header {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 18px 24px;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+header p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* =========================================================
+   Headings
+   ========================================================= */
+
+h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.75rem;
+    color: var(--heading-main);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.25rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin: 1.2rem 0 0.75rem;
+    color: var(--heading-sub);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.25rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.5rem;
+    color: var(--heading-third);
+}
+
+/* =========================================================
+   Paragraphs and Lists
+   ========================================================= */
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* =========================================================
+   Header Back Links / Buttons
+   ========================================================= */
+
+.back-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.back-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.back-btn {
+    position: absolute;
+    right: 24px;
+    top: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+/* =========================================================
+   Description / Information Banner
+   ========================================================= */
+
+.description {
+    background: var(--bg-banner);
+    border-left: 5px solid var(--primary-color);
+    padding: 16px;
+    margin: 16px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   Meta Information
+   ========================================================= */
+
+.meta {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--text-meta);
+}
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+a {
+    color: var(--primary-link);
+}
+
+a:hover {
+    color: var(--primary-link-hover);
+    text-decoration: underline;
+}
+
+/* =========================================================
+   Link Button Box
+   ========================================================= */
+
+.link-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.link-box a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: background-color 0.2s ease;
+}
+
+.link-box a:hover {
+    background-color: var(--primary-hover);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* =========================================================
+   Search / Inputs
+   ========================================================= */
+
+input,
+input[type="text"],
+input[type="search"] {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    border-radius: 6px;
+}
+
+/* =========================================================
+   Sections
+   ========================================================= */
+
+.section {
+    margin-bottom: 24px;
+}
+
+.section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.subsection {
+    margin-top: 28px;
+}
+
+.subsection h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+/* =========================================================
+   Card Grid
+   ========================================================= */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+/* =========================================================
+   Cards
+   ========================================================= */
+
+.card {
+    background: var(--bg-surface);
+    padding: 14px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card a {
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary-link);
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+}
+
+.card a:hover {
+    color: var(--primary-link-hover);
+    text-decoration: underline;
+}
+
+.card p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.25;
+}
+
+/* =========================================================
+   Code Blocks
+   ========================================================= */
+
+pre {
+    background: var(--bg-code);
+    padding: 0.8rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-main);
+}
+
+code {
+    background: var(--bg-inline-code);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+    color: var(--text-inline-code);
+}
+
+/* =========================================================
+   Table Containers
+   ========================================================= */
+
+.table-container,
+.table-card {
+    display: block !important;
+    width: 100% !important;
+    background: var(--bg-surface);
+    margin: 16px 0 24px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow);
+    overflow-x: auto !important;
+    box-sizing: border-box;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* =========================================================
+   Standard & Custom Tables Layout Engine
+   ========================================================= */
+
+table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 0.9rem;
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    table-layout: auto !important;
+}
+
+th, td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+    text-align: left;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+}
+
+th {
+    background-color: var(--bg-body);
+    color: var(--heading-main);
+    font-weight: 600;
+    white-space: nowrap !important;
+}
+
+/* Fixed column dimensions to enforce breathing space */
+table th:nth-child(1), table td:nth-child(1) { min-width: 160px; }
+table th:nth-child(2), table td:nth-child(2) { min-width: 120px; }
+table th:nth-child(3), table td:nth-child(3) { min-width: 110px; }
+table th:nth-child(4), table td:nth-child(4) { min-width: 280px; }
+
+/* Alternate Row Striping */
+table tbody tr:nth-child(even) {
+    background-color: var(--bg-body);
+}
+
+/* Hover Row Highlight */
+table tbody tr:hover {
+    background-color: var(--bg-inline-code);
 }
